@@ -3,5 +3,5 @@ Simple application framework for making interactive graphical applications.
 Needs the following libraries:
 -SFML
 -GLEW
--Box2D (with the example layer)
+-Box2D (used by the example layer)
 -GLM
