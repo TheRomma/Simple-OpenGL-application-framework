@@ -5,7 +5,6 @@ application::application(window* a_window, layer* a_layer)
     m_running = true;
     m_window = a_window;
     m_layer = a_layer;
-    m_layer->init();
     m_time = 0.0f;
 }
 

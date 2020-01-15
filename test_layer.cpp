@@ -2,11 +2,6 @@
 
 test_layer::test_layer()
 {
-
-}
-
-void test_layer::init()
-{
     srand(time(NULL));
     m_elapsedTime = 0;
 
@@ -58,6 +53,7 @@ void test_layer::init()
     m_proj = glm::mat4();
 
     m_window = nullptr;
+
 }
 
 test_layer::~test_layer()
@@ -82,7 +78,6 @@ layer* test_layer::update(float a_delta)
     if(m_buttons[0].update(a_delta, m_proj * m_view, m_window->getWindowPtr()) == true)
     {
         layer* next = new test_layer();
-        next->init();
         delete this;
         return next;
     }
@@ -101,7 +96,7 @@ void test_layer::draw(window* a_window)
 {
     m_window = a_window;
 
-    glClearColor(0.1f + 0.1f * sin(m_elapsedTime),0.1f + 0.1f * cos(m_elapsedTime),0.1f,1.0f);
+    glClearColor(0.1f + 0.1f * sin(m_elapsedTime/2 + 0), 0.1f + 0.1f * sin(m_elapsedTime/2 + 2 * 3.14 / 3), 0.1f + 0.1f * sin(m_elapsedTime/2 + 4 * 3.14 / 3), 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glBindVertexArray(m_mesh->getId());

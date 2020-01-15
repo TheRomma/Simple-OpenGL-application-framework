@@ -39,6 +39,9 @@ bool button::update(float a_delta, glm::mat4 a_projView, sf::Window* a_window)
 
     if(result.x < 0 && result.y < 0)
     {
+        m_effect = 3;
+        m_model = glm::translate(glm::mat4(), m_pos);
+        m_model = glm::scale(m_model, glm::vec3(1.1f, 1.1f, 1.0f));
         if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             return true;
@@ -50,6 +53,9 @@ bool button::update(float a_delta, glm::mat4 a_projView, sf::Window* a_window)
     }
     else
     {
+        m_effect = 0;
+        m_model = glm::translate(glm::mat4(), m_pos);
+        m_model = glm::scale(m_model, m_scale);
         return false;
     }
 }

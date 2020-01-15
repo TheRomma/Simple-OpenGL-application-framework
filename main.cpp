@@ -2,7 +2,10 @@
 
 int main()
 {
-    application app(new window(1280,720,"Title  thingy"), new test_layer());
+    window* Window = new window(1280,720,"Title  thingy");
+    test_layer* Test_layer = new test_layer();
+
+    application app(Window, Test_layer);
     app.execute();
     return 0;
 }

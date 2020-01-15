@@ -12,7 +12,6 @@ class test_layer : public layer
 {
 public:
     test_layer();
-    void init();
     ~test_layer();
     layer* update(float a_delta);
     void draw(window* a_window);
