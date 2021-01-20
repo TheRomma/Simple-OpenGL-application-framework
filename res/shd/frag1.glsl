@@ -1,11 +1,11 @@
-#version 330 core
+#version 430 core
 
 out vec4 fragColor;
 
 in vec2 f_tex;
 
 uniform sampler2DArray Texture;
-uniform unsigned int texId;
+uniform uint texId;
 uniform float elapsedTime;
 uniform int effect;
 
